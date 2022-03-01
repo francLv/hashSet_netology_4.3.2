@@ -1,12 +1,15 @@
 package ru.netology;
 
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
         Set<Student> studentMap = new HashSet<>();
+        Scanner scanner = new Scanner(System.in);
+
         Student student1 = new Student("Петров Петя", "123-Б", "123456");
         Student student2 = new Student("Иванов Иван", "123-Б", "1234567");
         studentMap.add(student1);
