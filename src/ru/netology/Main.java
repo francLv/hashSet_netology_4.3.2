@@ -30,6 +30,7 @@ public class Main {
                 studentMap.add(student);
             }
         }
+        scanner.close();
     }
 
     static void printMap() {
