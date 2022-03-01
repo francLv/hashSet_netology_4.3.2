@@ -22,11 +22,8 @@ public class Main {
                 printMap();
                 break;
             } else {
-                String[] split = input.split(",");
-                String name = split[0];
-                String group = split[1];
-                String studentId = split[2];
-                Student student = new Student(name, group, studentId);
+                String[] split = input.split(",", 3);
+                Student student = new Student(split[0], split[1], split[2]);
                 studentMap.add(student);
             }
         }
