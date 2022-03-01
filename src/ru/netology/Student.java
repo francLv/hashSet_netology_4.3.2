@@ -26,7 +26,6 @@ public class Student {
         if (obj == null || !obj.getClass().equals(Student.class)) {
             return false;
         }
-        System.out.println("Студент с таким номером студенческого билета уже существует");
         Student student = (Student) obj;
         return studentId.equals(student.studentId);
     }
