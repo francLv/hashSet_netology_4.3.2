@@ -10,11 +10,22 @@ public class Main {
         Set<Student> studentMap = new HashSet<>();
         Scanner scanner = new Scanner(System.in);
 
-        Student student1 = new Student("Петров Петя", "123-Б", "123456");
-        Student student2 = new Student("Иванов Иван", "123-Б", "1234567");
-        studentMap.add(student1);
-        studentMap.add(student2);
-        System.out.println(studentMap);
-
+        System.out.println("Введите информацию о студенте: " +
+                "\"ФИО, номер группы, номер студенческого билета\"");
+        while (true) {
+            String input = scanner.nextLine();
+            if ("end".equals(input)) {
+                System.out.println("Список студентов:");
+                for (Student student : studentMap) System.out.println(student);
+                break;
+            } else {
+                String[] split = input.split(",");
+                String name = split[0];
+                String group = split[1];
+                String studentId = split[2];
+                    Student student = new Student(name, group, studentId);
+                    studentMap.add(student);
+                }
+            }
+        }
     }
-}

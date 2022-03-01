@@ -28,25 +28,24 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Студент{" +
-                "Имя '" + name + '\'' +
-                ", группа '" + group + '\'' +
-                ", studentId='" + studentId + '\'' +
-                '}';
+        return "  - " + name +
+                ", " + group + ", " + studentId;
     }
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || !obj.getClass().equals(Student.class)) return false;
+        if (obj == null || !obj.getClass().equals(Student.class)) {
+            return false;
+        }
+        System.out.println("Студент с таким номером студенческого билета уже существует");
         Student student = (Student) obj;
-        return Objects.equals(name, student.name) && Objects.equals(group, student.group) &&
-                Objects.equals(studentId, student.studentId);
+        return studentId.equals(student.studentId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, group, studentId);
+        return Objects.hash(studentId);
     }
 }
 
